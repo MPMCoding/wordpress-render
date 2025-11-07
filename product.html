@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto - Sneaker Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h1>Sneaker Store</h1>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#produtos" class="nav-link">Produtos</a>
+                <a href="index.html#sobre" class="nav-link">Sobre</a>
+                <a href="index.html#contato" class="nav-link">Contato</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-detail-section">
+            <div class="container">
+                <div class="product-detail" id="productDetail">
+                    <!-- Detalhes do produto serão inseridos via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="related-products">
+            <div class="container">
+                <h2 class="section-title">Produtos Relacionados</h2>
+                <div class="products-grid" id="relatedProducts">
+                    <!-- Produtos relacionados serão inseridos via JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sneaker Store</h3>
+                    <p>Seu lugar para encontrar os melhores sneakers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#produtos">Produtos</a></li>
+                        <li><a href="index.html#sobre">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>Email: contato@sneakerstore.com</p>
+                    <p>Telefone: (11) 1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sneaker Store. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrinho de Compras -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Carrinho de Compras</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Itens do carrinho serão inseridos aqui -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: R$ <span id="cartTotal">0,00</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <script src="script.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html>

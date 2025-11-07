@@ -1,44 +1,26 @@
 services:
-  - type: pserv
-    name: mysql
-    env: docker
-    plan: starter
-    dockerfilePath: ./mysql.Dockerfile
-    autoDeploy: true
-    envVars:
-      - key: MYSQL_DATABASE
-        value: wordpress
-      - key: MYSQL_USER
-        value: wordpress
-      - key: MYSQL_PASSWORD
-        value: wordpress
-      - key: MYSQL_ROOT_PASSWORD
-        value: root
-    disk:
-      name: mysql-data
-      mountPath: /var/lib/mysql
-      sizeGB: 10
-
   - type: web
-    name: wordpress
-    env: docker
-    plan: starter
-    dockerfilePath: ./Dockerfile
-    autoDeploy: true
-    healthCheckPath: /
+    name: sneaker-store
+    env: static
+    buildCommand: ""
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=3600
+      - path: /*.css
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /*.js
+        name: Cache-Control
+        value: public, max-age=86400
+    routes:
+      - type: rewrite
+        source: /product
+        destination: /product.html
+      - type: rewrite
+        source: /cart
+        destination: /index.html#cart
     envVars:
-      - key: WORDPRESS_DB_HOST
-        fromService:
-          name: mysql
-          type: pserv
-          property: host
-      - key: WORDPRESS_DB_USER
-        value: wordpress
-      - key: WORDPRESS_DB_PASSWORD
-        value: wordpress
-      - key: WORDPRESS_DB_NAME
-        value: wordpress
-    disk:
-      name: wp-content
-      mountPath: /var/www/html/wp-content
-      sizeGB: 5
+      - key: NODE_ENV
+        value: production

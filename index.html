@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Store - E-commerce de Sapatos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Sneaker Store</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#produtos" class="nav-link">Produtos</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Os Melhores Sapatos com os Melhores Preços</h2>
+                <p>Descubra nossa coleção exclusiva de sneakers e tênis esportivos</p>
+                <button class="cta-button" onclick="scrollToProducts()">Ver Produtos</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Modern%20sneaker%20hero%20image%2C%20stylish%20athletic%20shoes%20on%20display%2C%20clean%20background%2C%20professional%20photography&image_size=landscape_16_9" alt="Sneakers Hero">
+            </div>
+        </section>
+
+        <section id="produtos" class="products-section">
+            <div class="container">
+                <h2 class="section-title">Nossos Produtos</h2>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Produtos serão inseridos via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="about-section">
+            <div class="container">
+                <h2>Sobre Nós</h2>
+                <p>Somos uma loja especializada em sneakers e tênis esportivos das melhores marcas. Nossa missão é proporcionar os melhores produtos com preços acessíveis e atendimento de qualidade.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sneaker Store</h3>
+                    <p>Seu lugar para encontrar os melhores sneakers.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>Email: contato@sneakerstore.com</p>
+                    <p>Telefone: (11) 1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sneaker Store. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrinho de Compras -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Carrinho de Compras</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Itens do carrinho serão inseridos aqui -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: R$ <span id="cartTotal">0,00</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

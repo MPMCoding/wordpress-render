@@ -1,0 +1,7 @@
+services:
+  - type: static
+    name: wordpress-static
+    env: static
+    staticPublishPath: ./static
+    buildCommand: ""
+

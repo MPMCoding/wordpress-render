@@ -1,0 +1,23 @@
+{
+  "name": "sneaker-store",
+  "version": "1.0.0",
+  "description": "E-commerce de sapatos - Site estático para Render",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build": "echo 'Build concluído - site estático pronto'",
+    "test": "echo 'Sem testes configurados'"
+  },
+  "keywords": [
+    "ecommerce",
+    "sneakers",
+    "shoes",
+    "static-site",
+    "render"
+  ],
+  "author": "Sneaker Store",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
